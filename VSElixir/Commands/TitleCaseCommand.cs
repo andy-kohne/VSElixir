@@ -40,7 +40,7 @@ namespace VSElixir.Commands
         private void MenuItemCallback(object sender, EventArgs e)
         {
             var dte2 = (DTE2)ServiceProvider.GetService(typeof(DTE));
-            var textSelection = dte2.ActiveWindow.Selection as TextSelection;
+            var textSelection = dte2.ActiveWindow.Document.Selection as TextSelection;
             if (!string.IsNullOrEmpty(textSelection?.Text))
             {
                 var textInfo = CultureInfo.CurrentCulture.TextInfo;
