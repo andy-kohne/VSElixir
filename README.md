@@ -1,4 +1,4 @@
-<img align="left" src="https://github.com/andy-kohne/VSElixir/blob/master/VSElixir.png" />
+<img align="left" src="https://github.com/andy-kohne/VSElixir/raw/master/VsElixir.png" />
 # VSElixir
 
 ###Project Description  
