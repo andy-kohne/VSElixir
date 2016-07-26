@@ -1,0 +1,28 @@
+﻿<Window x:Class="VSElixir.Dialog.DelbinOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.14.0"
+
+        Height="216" Width="124" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" KeyUp="DelbinOptions_OnKeyUp" Loaded="Window_Loaded" BorderThickness="1"  Title="DELBIN" WindowStyle="None" Background="{DynamicResource {x:Static shell:VsBrushes.ToolWindowBackgroundKey}}"
+      >
+    <Window.Resources>
+        <ResourceDictionary Source="generic.xaml" />
+    </Window.Resources>
+    <Grid Margin="0,0,2,-2">
+        <StackPanel HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"  >
+            <CheckBox x:Name="chkResetIIS" Content="Reset IIS" IsChecked="true" />
+            <CheckBox x:Name="chkKillWebDev" Content="Kill WebDev" IsChecked="true" />
+            <CheckBox x:Name="chkPackages" Content="Packages" Margin="0,10,0,0"/>
+            <CheckBox x:Name="chkReflectedSchemas" Content="Reflected" IsChecked="true" HorizontalAlignment="Left" />
+            <CheckBox x:Name="chkTempAsp" Content="Temp ASP.Net" IsChecked="true"/>
+            <CheckBox x:Name="chkTemp" Content="Temp" IsChecked="true"/>
+            <CheckBox x:Name="chkBin" Content="BIN" IsChecked="true"/>
+            <CheckBox x:Name="chkWebsiteCache" Content="Website Cache" IsChecked="true"/>
+            <CheckBox x:Name="chkBuild" Content="Build Solution" IsChecked="true"  Margin="0,10,0,0" />
+            <Button Content="DELBIN!" HorizontalAlignment="Left" Margin="0,10,0,0"  VerticalAlignment="Top" Width="100"  Click="ButtonBase_OnClick" />
+        </StackPanel>
+
+
+    </Grid>
+
+</Window>

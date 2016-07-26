@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidVsElixirPackage">
+
+    <Groups>
+
+      <Group guid="guidVsElixirToolsCommandSet" id="VsElixirToolsGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+      </Group>
+
+      <Group guid="guidVsElixirEditorCommandSet" id="VsElixirEditorGroup" priority="0x0600">
+        <Parent guid="guidStdEditor" id="IDG_VS_EDITOR_ADVANCED_CMDS" />
+      </Group>
+
+    </Groups>
+
+    <Buttons>
+
+      <Button guid="guidVsElixirToolsCommandSet" id="IisAutoAttachCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidVsElixirToolsCommandSet" id="VsElixirToolsGroup" />
+        <Icon guid="guidImages" id="bmpPicArrows" />
+        <Strings>
+          <ButtonText>IIS Attach - Solution / AppPool Matching</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidVsElixirToolsCommandSet" id="CleanupCommandId" priority="0x0101" type="Button">
+        <Parent guid="guidVsElixirToolsCommandSet" id="VsElixirToolsGroup" />
+        <Strings>
+          <ButtonText>Cleanup</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidVsElixirToolsCommandSet" id="ActivityLogCommandId" priority="0x0102" type="Button">
+        <Parent guid="guidVsElixirToolsCommandSet" id="VsElixirToolsGroup" />
+        <Strings>
+          <ButtonText>Open ActivityLog</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidVsElixirEditorCommandSet" id="TitleCaseCommandId" priority="0x2e02" type="Button">
+        <Parent guid="guidStdEditor" id="IDG_VS_EDITOR_ADVANCED_CMDS" />
+        <Strings>
+          <ButtonText>Make Title Case</ButtonText>
+        </Strings>
+      </Button>
+      
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Assets\IisAutoAttach.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+    </Bitmaps>
+
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidVsElixirToolsCommandSet" id="IisAutoAttachCommandId" editor="guidVSStd97" key1="VK_F5" mod1="Control Shift Alt"></KeyBinding>
+    <KeyBinding guid="guidVsElixirToolsCommandSet" id="CleanupCommandId" editor="guidVSStd97" key1="D" mod1="Control Shift Alt" ></KeyBinding>
+  </KeyBindings>
+
+  <Symbols>
+
+    <GuidSymbol name="guidVsElixirPackage" value="{2224D3D0-49B5-4F23-B5C0-C36FFC0C6FE0}" />
+
+    <GuidSymbol name="guidVsElixirToolsCommandSet" value="{17B6D526-DD11-450A-93E6-E3DEDD75BC23}">
+      <IDSymbol name="VsElixirToolsGroup" value="1" />
+      <IDSymbol name="IisAutoAttachCommandId" value="2" />
+      <IDSymbol name="ActivityLogCommandId" value="3" />
+      <IDSymbol name="CleanupCommandId" value="4" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidVsElixirEditorCommandSet" value="{F7F07ABC-BC08-4245-9F50-70DBB0C7E666}">
+      <IDSymbol name="VsElixirEditorGroup" value="1" />
+      <IDSymbol name="TitleCaseCommandId" value="2" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{A197B1E1-11E9-486A-9364-2E97A58DA2C3}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
+  </Symbols>
+
+</CommandTable>
