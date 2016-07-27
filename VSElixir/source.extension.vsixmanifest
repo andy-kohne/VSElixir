@@ -5,7 +5,8 @@
     <DisplayName>VSElixir</DisplayName>
     <Description xml:space="preserve">IIS auto-attaching, solution cleaning, etc...</Description>
     <License>Assets\License.txt</License>
-    <Icon>Thumbnail.png</Icon>
+    <Icon>Assets\VSElixir.ico</Icon>
+    <PreviewImage>Assets\PreviewImage.png</PreviewImage>
     <Tags>iis;w3wp;attach;debugger;clean;cache;titlecase</Tags>
   </Metadata>
   <Installation>

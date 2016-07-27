@@ -14,6 +14,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Assets\VSElixir.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\VSElixir.ico</ApplicationIcon>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -86,19 +89,18 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Thumbnail.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="Assets\PreviewImage.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="VsElixir.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="Assets\VSElixir.ico">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Assets\VSElixir_64.png" />
     <VSCTCompile Include="VSElixirPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
+      <SubType>Designer</SubType>
     </VSCTCompile>
     <Content Include="Assets\IisAutoAttach.png" />
-    <Content Include="Assets\IisAutoAttachPackage.ico" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
