@@ -1,57 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
-  <Identifier Id="7DC4C701-604A-4237-AF05-BADB9F358CDC">
-    <Name>VSElixir</Name>
-    <Author>Andrew Kohne</Author>
-    <Version>1.0.2</Version>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="7DC4C701-604A-4237-AF05-BADB9F358CDC" Version="1.0.1" Language="en-US" Publisher="Andrew Kohne" />
+    <DisplayName>VSElixir</DisplayName>
     <Description xml:space="preserve">IIS auto-attaching, solution cleaning, etc...</Description>
-    <Locale>1033</Locale>
-    <InstalledByMsi>false</InstalledByMsi>
-    <MoreInfoUrl>https://github.com/andy-kohne/VSElixir</MoreInfoUrl>
     <License>Assets\License.txt</License>
     <Icon>Assets\VSElixir.ico</Icon>
     <PreviewImage>Assets\PreviewImage.png</PreviewImage>
-    <SupportedProducts>
-      <VisualStudio Version="15.0">
-        <Edition>Pro</Edition>
-        <Edition>Community</Edition>
-      </VisualStudio>
-      <VisualStudio Version="14.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-        <Edition>All_Express</Edition>
-      </VisualStudio>
-      <VisualStudio Version="13.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-      </VisualStudio>
-      <VisualStudio Version="12.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-      </VisualStudio>
-      <VisualStudio Version="11.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-      </VisualStudio>
-      <VisualStudio Version="10.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-      </VisualStudio>
-    </SupportedProducts>
-    <SupportedFrameworkRuntimeEdition MinVersion="4.0" />
-  </Identifier>
-  <References>
-    <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
-      <Name>Visual Studio MPF</Name>
-    </Reference>
-  </References>
-  <Content>
-    <VsPackage>|%CurrentProject%;PkgdefProjectOutputGroup|</VsPackage>
-    <MefComponent>|%CurrentProject%|</MefComponent>
-  </Content>
-</Vsix>
+    <Tags>iis;w3wp;attach;debugger;clean;cache;titlecase</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Version="[12.0,15.0)" Id="Microsoft.VisualStudio.Community" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>
