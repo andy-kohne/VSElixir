@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace VSElixir.Dialog
@@ -14,11 +15,17 @@ namespace VSElixir.Dialog
 
         private void DelbinOptions_OnKeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Escape)
+            switch (e.Key)
             {
-                DialogResult = false;
-                Hide();
+                case Key.Escape:
+                    DialogResult = false;
+                    Hide();
+                    break;
+                case Key.Enter:
+                    delBtn.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                    break;
             }
+         
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
