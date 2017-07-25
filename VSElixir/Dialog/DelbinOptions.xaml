@@ -19,7 +19,7 @@
             <CheckBox x:Name="chkBin" Content="BIN" IsChecked="true"/>
             <CheckBox x:Name="chkWebsiteCache" Content="Website Cache" IsChecked="true"/>
             <CheckBox x:Name="chkBuild" Content="Build Solution" IsChecked="true"  Margin="0,10,0,0" />
-            <Button Content="DELBIN!" HorizontalAlignment="Left" Margin="0,10,0,0"  VerticalAlignment="Top" Width="100"  Click="ButtonBase_OnClick" />
+            <Button  x:Name="delBtn" Content="DELBIN!" HorizontalAlignment="Left" Margin="0,10,0,0"  VerticalAlignment="Top" Width="100"  Click="ButtonBase_OnClick"/>
         </StackPanel>
 
 
