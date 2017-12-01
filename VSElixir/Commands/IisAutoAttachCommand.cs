@@ -88,6 +88,7 @@ namespace VSElixir.Commands
                 // find any projects sited in iis
                 pane.WriteLine("Looking for projects sited in IIS...");
                 var projects = ide.Solution.GetAllProjects()
+                        .Where(p => p.Kind != EnvDTE.Constants.vsProjectKindUnmodeled)
                         .Where(p => iisItems.Any(i => !string.IsNullOrWhiteSpace(p.FullName) && i.PhysicalPaths.Contains(Path.GetDirectoryName(p.FullName), StringComparer.OrdinalIgnoreCase)))
                         .Select(p => new
                         {
