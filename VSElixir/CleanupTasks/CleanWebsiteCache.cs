@@ -1,8 +1,10 @@
-﻿using VSElixir.Helpers;
-using EnvDTE;
+﻿using EnvDTE;
 using EnvDTE80;
 using System;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using VSElixir.Helpers;
 
 namespace VSElixir.CleanupTasks
 {
@@ -13,13 +15,15 @@ namespace VSElixir.CleanupTasks
             var websiteCacheFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Microsoft\\WebSiteCache");
             pane.WriteLine("Cleaning WebSiteCache...");
 
-            foreach (var p in Directory.GetDirectories(websiteCacheFolder))
-            {
-                pane.Write(p + "...", 1);
-                EmptyDir(p, pane);
-                pane.WriteLine("done.", 1);
-            }
-            EmptyDir(websiteCacheFolder, pane);
+            Parallel.ForEach(
+                Directory.GetDirectories(websiteCacheFolder).Select((path, index) => new {Path = path, Index = index}),
+                pathitem =>
+                {
+                    var tag = $"{pathitem.Index}>";
+                    pane.WriteLine($" ------ {pathitem.Path} ------", tag: tag);
+                    EmptyDir(pathitem.Path, pane, tag);
+                    pane.WriteLine($" done.", tag: tag);
+                });
 
             pane.WriteLine(string.Empty);
         }

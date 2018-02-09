@@ -1,13 +1,13 @@
-﻿using System;
+﻿using EnvDTE;
+using System;
 using System.IO;
-using EnvDTE;
 using VSElixir.Helpers;
 
 namespace VSElixir.CleanupTasks
 {
     public static partial class CleanupTasks
     {
-        public static void EmptyDir(string path, OutputWindowPane pane)
+        public static void EmptyDir(string path, OutputWindowPane pane, string tag = null)
         {
             bool hasErrored = false;
 
@@ -25,10 +25,9 @@ namespace VSElixir.CleanupTasks
                     {
                         if (!hasErrored)
                         {
-                            pane?.WriteLine(string.Empty);
                             hasErrored = true;
                         }
-                        pane?.WriteLine($"ERROR deleting folder {p}; {ex.Message}",4);
+                        pane?.WriteLine($"ERROR deleting folder {p}; {ex.Message}", tag: tag);
                     }
                 }
 
@@ -42,10 +41,9 @@ namespace VSElixir.CleanupTasks
                     {
                         if (!hasErrored)
                         {
-                            pane?.WriteLine(string.Empty);
                             hasErrored = true;
                         }
-                        pane?.WriteLine($"ERROR deleting file {f}; {ex.Message}",4);
+                        pane?.WriteLine($"ERROR deleting file {f}; {ex.Message}", tag: tag);
                     }
                 }
 

@@ -4,6 +4,8 @@ using EnvDTE80;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace VSElixir.CleanupTasks
 {
@@ -17,31 +19,32 @@ namespace VSElixir.CleanupTasks
             {
                 var sol = dte.Solution.FileName;
                 var solpath = Path.GetDirectoryName(sol);
-                var dirs = new List<string>();
+                var paths = new List<string>();
 
                 if (!string.IsNullOrEmpty(solpath))
                 {
-                    dirs.AddRange(Directory.GetDirectories(solpath, "packages", SearchOption.AllDirectories));
+                    paths.AddRange(Directory.GetDirectories(solpath, "packages", SearchOption.AllDirectories));
                 }
 
                 var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
                 if (!string.IsNullOrEmpty(localAppData))
                 {
-                    dirs.Add(Path.Combine(localAppData, @"NuGet\Cache"));
+                    paths.Add(Path.Combine(localAppData, @"NuGet\Cache"));
                 }
 
                 var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 if (!string.IsNullOrEmpty(userProfile))
                 {
-                    dirs.Add(Path.Combine(userProfile, @".nuget\packages"));
+                    paths.Add(Path.Combine(userProfile, @".nuget\packages"));
                 }
 
-                foreach (var p in dirs)
+                Parallel.ForEach(paths.Select((path, index) => new { Path = path, Index = index }), pathitem =>
                 {
-                    pane.Write(p + "...", 1);
-                    EmptyDir(p, pane);
-                    pane.WriteLine("done.", 1);
-                }
+                    var tag = $"{pathitem.Index}>";
+                    pane.WriteLine($" ------ {pathitem.Path} ------", tag: tag);
+                    EmptyDir(pathitem.Path, pane, tag);
+                    pane.WriteLine($" done.", tag: tag);
+                });
 
             }
             catch (Exception ex)
