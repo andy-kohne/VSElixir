@@ -1,9 +1,10 @@
-﻿using System;
+﻿using EnvDTE;
+using EnvDTE80;
+using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using VSElixir.Helpers;
-using EnvDTE;
-using EnvDTE80;
 
 namespace VSElixir.CleanupTasks
 {
@@ -14,13 +15,15 @@ namespace VSElixir.CleanupTasks
         {
             pane.WriteLine("Removing BIN,OBJ,PROXYBIN folders...");
 
-            var projects = dte.Solution.GetAllProjects();
+            var projects = dte.Solution.GetAllProjects().Select((p, i) => new { i, p });
 
-            foreach (var p in projects)
+            Parallel.ForEach(projects, pi =>
             {
+                var p = pi.p;
+                var tag = $"{pi.i}>";
                 try
                 {
-                    pane.WriteLine(p.Name, 1);
+                    pane.WriteLine($" ------ {p.Name} ------", tag: tag);
                     if (p.Properties != null)
                     {
                         var projPath = string.Empty;
@@ -40,9 +43,9 @@ namespace VSElixir.CleanupTasks
                                     .Concat(Directory.GetDirectories(projPath, "proxybin", SearchOption.AllDirectories)).ToList();
                             foreach (var d in dirs)
                             {
-                                pane.Write(d + "...", 1);
-                                EmptyDir(d, pane);
-                                pane.WriteLine("done.", 1);
+                                pane.WriteLine($"{d}....", tag: tag);
+                                EmptyDir(d, pane, tag);
+                                pane.WriteLine($"{d} done.", tag: tag);
                             }
                         }
                     }
@@ -51,7 +54,8 @@ namespace VSElixir.CleanupTasks
                 {
                     pane.WriteLine(ex.ToString());
                 }
-            }
+
+            });
 
             pane.WriteLine(string.Empty);
         }

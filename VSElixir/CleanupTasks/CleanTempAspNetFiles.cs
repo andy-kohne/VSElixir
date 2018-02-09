@@ -1,10 +1,12 @@
-﻿using VSElixir.Helpers;
-using EnvDTE;
+﻿using EnvDTE;
 using EnvDTE80;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Web.Configuration;
+using VSElixir.Helpers;
 
 namespace VSElixir.CleanupTasks
 {
@@ -26,14 +28,15 @@ namespace VSElixir.CleanupTasks
             if (!string.IsNullOrEmpty(configSection.TempDirectory))
                 paths.Add(configSection.TempDirectory);
 
-            pane.WriteLine("Removing Temporary ASP.Net Files... ", 0);
+            pane.WriteLine("Removing Temporary ASP.Net Files... ");
 
-            foreach (var p in paths)
+            Parallel.ForEach(paths.Select((p,i) => new { Index = i, Path = p}), pathitem =>
             {
-                pane.Write(p + "...", 1);
-                EmptyDir(p, pane);
-                pane.WriteLine("done.", 1);
-            }
+                var tag = $"{pathitem.Index}>";
+                pane.WriteLine($" ------ {pathitem.Path} ------", tag: tag);
+                EmptyDir(pathitem.Path, pane, tag);
+                pane.WriteLine($" done.", tag: tag);
+            });
 
             pane.WriteLine(string.Empty);
         }

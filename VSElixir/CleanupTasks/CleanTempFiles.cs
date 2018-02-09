@@ -1,8 +1,10 @@
-﻿using VSElixir.Helpers;
-using EnvDTE;
+﻿using EnvDTE;
 using EnvDTE80;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using VSElixir.Helpers;
 
 namespace VSElixir.CleanupTasks
 {
@@ -16,12 +18,13 @@ namespace VSElixir.CleanupTasks
 
             pane.WriteLine("Removing Temporary Files...");
 
-            foreach (var p in paths)
+            Parallel.ForEach(paths.Select((path, index) => new {Path = path, Index = index}), pathitem =>
             {
-                pane.Write(p + "...", 1);
-                EmptyDir(p, pane);
-                pane.WriteLine("done.", 1);
-            }
+                var tag = $"{pathitem.Index}>";
+                pane.WriteLine($" ------ {pathitem.Path} ------", tag: tag);
+                EmptyDir(pathitem.Path, pane, tag);
+                pane.WriteLine($" done.", tag: tag);
+            });
 
             pane.WriteLine(string.Empty);
         }
