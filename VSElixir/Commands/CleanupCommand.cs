@@ -40,6 +40,8 @@ namespace VSElixir.Commands
             }
         }
 
+        private Dictionary<string, bool> _options = null;
+
         private void MenuItemCallback(object sender, EventArgs e)
         {
             if (_running != 0) return;
@@ -51,10 +53,14 @@ namespace VSElixir.Commands
                 SolutionLoaded = dte2?.Solution?.IsOpen ?? false
             };
 
+            dialog.Options = _options;
+
             var result = dialog.ShowDialog();
 
             if (result.GetValueOrDefault())
             {
+                _options = dialog.Options;
+
                 // determine what items to run
                 var tasks = new List<CleanupTask>();
 
