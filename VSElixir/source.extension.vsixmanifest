@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="7DC4C701-604A-4237-AF05-BADB9F358CDC" Version="1.0.6" Language="en-US" Publisher="Andrew Kohne" />
-    <DisplayName>VSElixir</DisplayName>
-    <Description xml:space="preserve">IIS auto-attaching, solution cleaning, etc...</Description>
-    <License>Assets\License.txt</License>
-    <Icon>Assets\VSElixir.ico</Icon>
-    <PreviewImage>Assets\PreviewImage.png</PreviewImage>
-    <Tags>iis;w3wp;attach;debugger;clean;cache;titlecase</Tags>
-  </Metadata>
-  <Installation>
-    <InstallationTarget Version="[12.0,17.0)" Id="Microsoft.VisualStudio.Community" />
-  </Installation>
-  <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-    <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
-  </Dependencies>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-  </Assets>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[12.0,16.0)" DisplayName="Visual Studio core editor" />
-  </Prerequisites>
+    <Metadata>
+        <Identity Id="7DC4C701-604A-4237-AF05-BADB9F358CDC" Version="1.0.7" Language="en-US" Publisher="Andrew Kohne" />
+        <DisplayName>VSElixir</DisplayName>
+        <Description xml:space="preserve">IIS auto-attaching, solution cleaning, etc...</Description>
+        <License>Assets\License.txt</License>
+        <Icon>Assets\VSElixir.ico</Icon>
+        <PreviewImage>Assets\PreviewImage.png</PreviewImage>
+        <Tags>iis;w3wp;attach;debugger;clean;cache;titlecase</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Version="[12.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+        <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[12.0,16.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
 </PackageManifest>
