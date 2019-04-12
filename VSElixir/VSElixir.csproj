@@ -94,6 +94,7 @@
     <Compile Include="Helpers\OutputPane.cs" />
     <Compile Include="Helpers\SolutionProjects.cs" />
     <Compile Include="Commands\IisAutoAttachCommand.cs" />
+    <Compile Include="Helpers\WindowsService.cs" />
     <Compile Include="VSElixirPackage.cs" />
     <Compile Include="Helpers\Iis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
