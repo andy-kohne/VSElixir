@@ -11,7 +11,6 @@ namespace VSElixir.Helpers
 {
     public class WindowsService
     {
-        private static readonly string[] PROCESS_NAMES = { "ktbs.services.rpchost", "kaigapi.rpchost", "payrollapi.rpchost" };
         private static readonly string[] EXCLUDED = {
             "csrss", "conhost", "svchost", "msbuild", "chrome", "msedge", "dllhost", "cmd", "iisexpress", "winlogon", "system", "smss", "idle"
         };
