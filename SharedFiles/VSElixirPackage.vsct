@@ -59,7 +59,7 @@
 
   <KeyBindings>
     <KeyBinding guid="guidVsElixirToolsCommandSet" id="IisAutoAttachCommandId" editor="guidVSStd97" key1="VK_F5" mod1="Control Shift Alt"></KeyBinding>
-    <KeyBinding guid="guidVsElixirToolsCommandSet" id="CleanupCommandId" editor="guidVSStd97" key1="D" mod1="Control Shift Alt" ></KeyBinding>
+    <KeyBinding guid="guidVsElixirToolsCommandSet" id="CleanupCommandId" editor="guidVSStd97" key1="VK_DELETE" mod1="Control Shift Alt" ></KeyBinding>
     <KeyBinding guid="guidVsElixirEditorCommandSet" id="TitleCaseCommandId" editor="guidVSStd97" key1="T" mod1="Control Shift" ></KeyBinding>
   </KeyBindings>
 
