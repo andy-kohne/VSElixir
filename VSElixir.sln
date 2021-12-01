@@ -1,14 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31919.166
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSElixir", "VSElixir\VSElixir.csproj", "{4127E9F7-EEFC-4D26-8FED-5E90B75EB756}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VSElixirShared", "VSElixirShared\VSElixirShared.shproj", "{F8E8D171-5D11-4759-95EE-7B7AE022F688}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSElixir2022", "VSElixir2022\VSElixir2022.csproj", "{2BC8E9C9-72D7-4C78-B4F4-22B09F338F50}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		VSElixirShared\VSElixirShared.projitems*{2bc8e9c9-72d7-4c78-b4f4-22b09f338f50}*SharedItemsImports = 4
 		VSElixirShared\VSElixirShared.projitems*{4127e9f7-eefc-4d26-8fed-5e90b75eb756}*SharedItemsImports = 4
 		VSElixirShared\VSElixirShared.projitems*{f8e8d171-5d11-4759-95ee-7b7ae022f688}*SharedItemsImports = 13
 	EndGlobalSection
@@ -21,6 +24,10 @@ Global
 		{4127E9F7-EEFC-4D26-8FED-5E90B75EB756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4127E9F7-EEFC-4D26-8FED-5E90B75EB756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4127E9F7-EEFC-4D26-8FED-5E90B75EB756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC8E9C9-72D7-4C78-B4F4-22B09F338F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC8E9C9-72D7-4C78-B4F4-22B09F338F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC8E9C9-72D7-4C78-B4F4-22B09F338F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC8E9C9-72D7-4C78-B4F4-22B09F338F50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
