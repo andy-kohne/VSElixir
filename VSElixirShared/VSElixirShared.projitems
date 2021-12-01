@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f8e8d171-5d11-4759-95ee-7b7ae022f688</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>VSElixirShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\BuildSolution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\CleanBinaries.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\CleanPackages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\CleanReflectedSchemas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\CleanTempAspNetFiles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\CleanTempFiles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\CleanWebsiteCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\EmptyDirectory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\IisReset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CleanupTasks\KillWebDev.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ActivityLogCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CleanupCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\IisAutoAttachCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\TitleCaseCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dialog\DelbinOptions.xaml.cs">
+      <DependentUpon>DelbinOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Iis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\OutputPane.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SolutionProjects.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VSElixirPackage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)VSPackage.resx">
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Dialog\DelbinOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dialog\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)VSElixir.ico" />
+  </ItemGroup>
+</Project>

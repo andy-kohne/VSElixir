@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSElixir", "VSElixir\VSElixir.csproj", "{4127E9F7-EEFC-4D26-8FED-5E90B75EB756}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VSElixirShared", "VSElixirShared\VSElixirShared.shproj", "{F8E8D171-5D11-4759-95EE-7B7AE022F688}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		VSElixirShared\VSElixirShared.projitems*{4127e9f7-eefc-4d26-8fed-5e90b75eb756}*SharedItemsImports = 4
+		VSElixirShared\VSElixirShared.projitems*{f8e8d171-5d11-4759-95ee-7b7ae022f688}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -18,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82EB5996-AD44-4585-9902-503AA6B2435B}
 	EndGlobalSection
 EndGlobal
